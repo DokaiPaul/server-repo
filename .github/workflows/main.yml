@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install
@@ -29,7 +29,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /srv/git/test/server-repo
+            cd srv/git/test/server-repo
             git pull origin main  # Update your code from the repository
             npm install  # Install dependencies (if needed)
             # Add any other deployment commands as needed
